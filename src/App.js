@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import Switcher from './components/switcher';
+import Title from './components/title';
+import React from 'react';
+import BoiCanh from './components/BoiCanh';
+import Concept from './components/Concept';
 
 function App() {
+  const [state,setState] = React.useState(true);
+  const handleOnClickChangeStatus =()=>{
+      setState(!state);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Header/>
+       <Title/>
+       <Switcher handleOnClickChangeStatus={handleOnClickChangeStatus}/>
+       {
+        state===true?
+        <Concept/>
+        :
+        <BoiCanh/>
+       }
+
     </div>
   );
 }
