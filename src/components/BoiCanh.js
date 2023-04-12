@@ -4,9 +4,8 @@ import { Box } from "@mui/system";
 
 const conCeptData = 
     [
-        {id:1,name: "Retro1", description:"blabla", more:"here",image:"media/test.jpg", img1:"media/test.jpg",img2:"media/test.jpg",img3:"media/test.jpg",img4:"media/test.jpg"},
-        {id:2,name: "Retro1", description:"blabla", more:"here",image:"media/test.jpg",img1:"media/test.jpg",img2:"media/test.jpg",img3:"media/test.jpg",img4:"media/test.jpg"},
-        {id:3,name: "Retro1", description:"blabla", more:"here",image:"media/test.jpg",img1:"media/test.jpg",img2:"media/test.jpg",img3:"media/test.jpg",img4:"media/test.jpg"},
+        {id:1,name: "Updating.. ", description:"Updating...", more:"here",image:"media/test.jpg", img1:"media/test.jpg",img2:"media/test.jpg",img3:"media/test.jpg",img4:"media/test.jpg"},
+        
       
     ];
 
