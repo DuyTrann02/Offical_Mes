@@ -1,5 +1,7 @@
 import SingleConcept from "./SingleConcept";
 import { Box } from "@mui/system";
+import Filter from "./Filter";
+import React from "react";
 
 
 const conCeptData = 
@@ -19,16 +21,24 @@ const conCeptData =
         {id:13,name: "13. Fashion", description:"Dành cho những tín đồ của thời trang. Lấy ý tưởng từ những show thời trang đẳng cấp của kinh đô thời trang thế giới- Italy. Hãy đắm mình vào không gian quý phái bất tận này.", image:"media/Fashion/nen.jpg", img1:"media/Fashion/1.jpg",img2:"media/Fashion/2.jpg",img3:"media/Fashion/3.jpg",img4:"media/Fashion/4.jpg"},
         {id:14,name: "14. Party Day", description:"Còn gì vừa thể hiện không khí hoan hỉ nhưng concept vẫn bling hơn một bữa tiệc. Bữa tiệc là nơi tạo câu chuyện, tạo khoảnh khắc, tạo ra những kỷ niệm đẹp.",image:"media/Day/nen.jpg", img1:"media/Day/1.jpg",img2:"media/Day/2.jpg",img3:"media/Day/3.jpg",img4:"media/Day/4.jpg"},
         {id:15,name: "15. Party Night", description:"Party Night đem người chụp đến không khí vừa quây quần, ấm cúng những vẫn có nét thơ và sang trọng. Hãy để một bữa tiệc ban đêm lưu giữ câu chuyện của bạn và những người bạn yêu thương.", image:"media/Night/nen.jpg", img1:"media/Night/1.jpg",img2:"media/Night/2.jpg",img3:"media/Night/3.jpg",img4:"media/Night/4.jpg"},
-      
-        
+        {id:16,name: "16. Bohemian", description:"Bohemain là cái tên bắt nguồn từ nét văn hóa du mục của quốc gia cùng tên. Bohemain mang một cái hồn phóng khoáng tự do và lãng mạn. Chủ đạo của concept này là tông màu nóng và trang phục thoải mái rất bắt mắt.", image:"media/Bohemian/nen.jpg", img1:"media/Bohemian/1.jpg",img2:"media/Bohemian/2.jpg",img3:"media/Bohemian/3.jpg",img4:"media/Bohemian/4.jpg"},
     ];
 
 
 function Concept(){
+    const [filter, setFilter] = React.useState(0);
+    const getFiter =(num)=>{
+          setFilter(num);
+    }
     
     return(
-        <Box sx={{display:"flex", flexDirection:"column", justifyContent:"space-around",  alignItems:"center"}}>
-        <Box sx={{width:"100%", height:"5vh"}}></Box>
+        <Box>
+            
+         <Filter getFilter = {getFiter}/>
+         {
+                filter===0?
+                <Box sx={{display:"flex", flexDirection:"column", justifyContent:"space-around",  alignItems:"center"}}>
+        <Box sx={{width:"100%", height:"1vh"}}></Box>
         {
             conCeptData.map((concept)=>(
                 <Box key={concept.id} sx={{marginTop:"4vh"}}>
@@ -36,6 +46,28 @@ function Concept(){
                 </Box>  
             ))
         }
+        
+        </Box>
+        :
+        <>
+          {
+            conCeptData.map((concept)=>(
+                <>
+                {
+                    concept.id === filter && 
+                    <Box sx={{display:"flex", flexDirection:"column", justifyContent:"space-around",  alignItems:"center"}}>
+                       <Box sx={{width:"100%", height:"1vh"}}></Box>
+                       <Box key={concept.id} sx={{marginTop:"4vh"}}>
+                              <SingleConcept infor={concept} />
+                       </Box>  
+                   </Box>  
+                }
+                </>
+            ))
+          }
+        </>
+                
+            }
         
         </Box>
     )

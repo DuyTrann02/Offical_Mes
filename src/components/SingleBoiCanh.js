@@ -1,6 +1,5 @@
 import { Box } from "@mui/system";
 import "../css/conceptSingle.css"
-import { Button } from "@mui/material";
 import React from "react";
 import SliderDialog from "./dialog";
 
@@ -12,12 +11,12 @@ function SingleBoiCanh(props){
             <Box sx = {{width:"40vw",height:"30vh"}}>
                 <Box sx={{width:"28vw", height:"37px", backgroundColor:"black", clipPath:"polygon(0% 0%, 100% 0%, 100% 52%, 92% 100%, 0% 100%)", padding:"3px"}}>
                    <Box sx={{width:"27.9vw", height:"36px", backgroundColor:"white", clipPath:"polygon(0% 0%, 100% 0%, 100% 50%, 93% 100%, 0% 100%)", display:"flex", justifyContent:"space-around",alignItems:"center"}}>
-                        {props.infor.name}
+                      <b>{props.infor.name}</b>  
                    </Box>
                 </Box>
                 
-                <Box sx={{ textAlign:"left", marginLeft:"5vw", width:"35vw",marginTop:"3vh"}}>
-                   {props.infor.description}
+                <Box sx={{ textAlign:"left", marginLeft:"4vw", width:"35vw",marginTop:"3vh"}}>
+                   <p>{props.infor.description}</p>
                 </Box>
             </Box>
             <Box sx={{width:"25vw"}}>
