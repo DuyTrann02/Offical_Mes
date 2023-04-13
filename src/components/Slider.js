@@ -60,7 +60,7 @@ function Slider(props){
    
  
     return(
-       <Box id ="box1" sx={{display:"flex", width:"80vw"}}>
+       <Box id ="box1" sx={{display:"flex", width:"100%"}}>
          <Box className='buttonBox1'>
           <ThemeProvider theme={theme}>
           <Button color="primary" className='control1' id='prev1' onClick={prev} sx={{backgroundColor:"rgba(255, 255, 255, 0.7)"}}><ArrowBackIosNewIcon sx={{color:"black"}}/></Button>
@@ -79,11 +79,11 @@ function Slider(props){
          </ThemeProvider>
          </Box>
          <Box className ='slide-container1'>
-           <Box id='slides1'  ref={slideContainer}>
+           <Box id='slides1'  ref={slideContainer} >
              {
                advertisementList.map((image,index)=>(
                  <div key ={index}>
-                    <img src ={image}  alt="" className='slide1' />
+                    <img src ={image}  alt="" className='slide1'  />
                  </div>
                ))
              }
